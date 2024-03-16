@@ -111,6 +111,7 @@ myfunc memset
 174:    tst     N, #16
         stmneia S!, {DAT0, DAT1, DAT2, DAT3}
         b       166b
+        .size memset,.-memset
 
         .unreq  S
         .unreq  DAT0

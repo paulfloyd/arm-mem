@@ -29,6 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .macro myfunc fname
  .func fname
  .global fname
+ .type fname STT_FUNC
 fname:
 .endm
 

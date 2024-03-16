@@ -154,3 +154,4 @@ myfunc strlen
         sub         a1, #4
         add         a1, TMP3, lsr #3
         pop         {v1,pc}
+        .size strlen,.-strlen

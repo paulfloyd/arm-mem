@@ -533,6 +533,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 myfunc memcpy
 1000:   memcpy  0
+        .size memcpy,.-memcpy
 .endfunc
 
 /*
@@ -551,6 +552,7 @@ myfunc memmove
         cmp     a2, a1
         bpl     1000b   /* pl works even over -1 - 0 and 0x7fffffff - 0x80000000 boundaries */
         memcpy  1
+        .size memmove,.-memmove
 .endfunc
 
 /*
@@ -565,9 +567,12 @@ myfunc memmove
 
 myfunc mempcpy
 .global __mempcpy
+.type __mempcpy STT_FUNC
 __mempcpy:
         push    {v1, lr}
         mov     v1, a3
         bl      1000b
         add     a1, a1, v1
         pop     {v1, pc}
+	.size mempcpy,.-mempcpy
+	.size __mempcpy,.-__mempcpy

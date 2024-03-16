@@ -457,3 +457,4 @@ myfunc memcmp
 43:     vpop        {q4}
         mov         RES, #0
         pop         {v1-v3,pc}
+        .size memcmp,.-memcmp

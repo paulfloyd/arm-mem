@@ -278,6 +278,7 @@ myfunc memcmp
         movhi   a1, #1
         movlo   a1, #-1
         pop     {DAT1-DAT6, pc}
+        .size memcmp,.-memcmp
 
         .unreq  S_1
         .unreq  S_2

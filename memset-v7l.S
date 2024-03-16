@@ -111,6 +111,7 @@ myfunc memset
         vst1.8  {q0-q1}, [SI]!
         sub     N, N, #32
         b       166b
+        .size memset,.-memset
 
         .unreq  SJ
         .unreq  N

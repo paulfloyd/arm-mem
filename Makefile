@@ -11,13 +11,13 @@ all: libarmmem-v6l.so libarmmem-v6l.a libarmmem-v7l.so libarmmem-v7l.a test test
 	$(CROSS_COMPILE)gcc -c -o $@ $^
 
 libarmmem-v6l.so: $(OBJS-V6L)
-	$(CROSS_COMPILE)gcc -shared -o $@ $^
+	$(CROSS_COMPILE)gcc -shared -o $@ -Wl,-soname,$@ $^
 
 libarmmem-v6l.a: $(OBJS-V6L)
 	$(CROSS_COMPILE)ar rcs $@ $^
 
 libarmmem-v7l.so: $(OBJS-V7L)
-	$(CROSS_COMPILE)gcc -shared -o $@ $^
+	$(CROSS_COMPILE)gcc -shared -o $@ -Wl,-soname,$@ $^
 
 libarmmem-v7l.a: $(OBJS-V7L)
 	$(CROSS_COMPILE)ar rcs $@ $^
